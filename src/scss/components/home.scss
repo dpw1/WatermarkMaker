@@ -1,0 +1,13 @@
+
+.is-1{
+  @include rfs(50);
+}
+
+.wm-thumbnail{
+    position: absolute;
+    top: 0;
+    right: 0;
+	max-width: 25px;
+	height: 25px;
+	width: 100%;
+}

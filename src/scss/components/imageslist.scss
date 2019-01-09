@@ -1,0 +1,37 @@
+$indicator-color: #26a69a;
+$indicator-size: 12px;
+$item-width: 180px;
+.images-list{
+	display: flex;	
+	margin-top: 20px;
+	.carousel-item{
+	    display: inline-block;
+	    max-width: $item-width;
+	    width: 100%;
+	    vertical-align: top;
+	    margin-right: 15px;
+		img{
+			max-width: $item-width;
+			width: 100%;
+		}
+	}
+	.indicator-item{
+		height: $indicator-size !important;
+		width: $indicator-size !important;
+		border: 1px solid #00b7a6 !important;
+		&.active{
+			background: $indicator-color !important;
+		}
+	}
+}
+
+@media (max-width: 380px){
+	.images-list{
+		flex-direction: column;
+		align-items: center;
+		.carousel-item{
+			margin-right: 0;
+			
+		}
+	}
+}
