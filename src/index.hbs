@@ -2,13 +2,13 @@
 
 <nav class="light-blue lighten-1" role="navigation">
 	<div class="nav-wrapper container">
-		<a id="logo-container" href="#" class="brand-logo">Logo</a>
+		<a id="logo-container" href="#" class="brand-logo"><img class="logo-img" src="images/WaterMarkerIcon.png" alt="Logo Image"></a>
 		<ul class="right hide-on-med-and-down">
-			<li><a href="#">Navbar Link</a></li>
+			{{> navbar-items }}
 		</ul>
 
 		<ul id="nav-mobile" class="sidenav">
-			<li><a href="#">Navbar Link</a></li>
+			{{> navbar-items }}
 		</ul>
 		<a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 	</div>
@@ -16,36 +16,47 @@
 <div class="section no-pad-bot" id="index-banner">
 	<div class="container">
 		<br><br>
-		<h1 class="header center is-1 no-pad">Watermark & Product Maker</h1>
+		<h1 class="main-header header center is-1 no-pad"><img class="main-logo-img" src="images/WaterMarkerLogoSmall.png" alt=""></h1>
 		<div class="row center">
 			<h5 class="header col s12 light">Select multiple images. Select Watermark. Download in one click.</h5>
+			<h5 class="header col s12 light">High quality and free.</h5>
 		</div>
 		<div class="row center">
-			<form action="#">
-				<div class="file-field input-field">
-					<div class="btn">
-						<span>Images</span>
-						<input type="file" id="imageInput" multiple>
-					</div>
-					<div class="file-path-wrapper">
-						<input class="file-path validate" type="text" placeholder="Upload one or more images">
+
+			<div class="file-field input-field">
+				<div class="btn blue">
+					<span>Images</span>
+					<input type="file" id="imageInput" multiple>
+				</div>
+				<div class="file-path-wrapper">
+					<input class="file-path validate" type="text" placeholder="Upload one or more images">
+				</div>
+			</div>
+					<div class="images-list">
+								</div>
+			<div class="file-field input-field">
+				<div class="btn blue">
+					<span>Watermark</span>
+					<input type="file" id="watermarkInput">
+				</div>
+				<div class="file-path-wrapper">
+					<input class="file-path validate disabled" type="text" placeholder="Add your watermark">
+					<div id="wm-box">
+						<!-- <img src="#" alt="#" class="wm-thumbnail"> -->
 					</div>
 				</div>
-				<div class="file-field input-field">
-					<div class="btn">
-						<span>Watermark</span>
-						<input type="file" id="watermarkInput">
-					</div>
-					<div class="file-path-wrapper">
-						<input class="file-path validate disabled" type="text" placeholder="Add your watermark">
-						<div id="wm-box">
-							<!-- <img src="#" alt="#" class="wm-thumbnail"> -->
-						</div>
-					</div>
-				</div>
-				<div class="images-list">
-			  </div>
-			</form>
+			</div>
+			<div class="wm-transparency">
+				<p class="range-field">
+					<span>Watermark Transparency<a class="btn blue btn-tooltip tooltipped" data-position="right" data-tooltip="The lower the more transparent">?</a></span>
+			      <input class="wm-transparency__range" type="range" id="watermarkTransparency" min="1" max="100" value="100" />
+			    </p>
+			</div>
+
+			<button id="sendImages" class="btn blue waves-effect waves-light" type="submit" name="action">Download
+			    <i class="material-icons right">send</i>
+			  </button>
+			<div class="images-list" id="finalResult"></div>
 		</div>
 
 	</div>
@@ -58,8 +69,8 @@
 		<div class="row">
 			<div class="col s12 m4">
 				<div class="icon-block">
-					<h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-					<h5 class="center">Speeds up the boring stuff</h5>
+					<h2 class="center light-blue-text"><i class="material-icons">watch</i></h2>
+					<h5 class="center">Save your time</h5>
 
 					<p class="light">We did most of the heavy lifting for you so you can focus on what's important for your business and save your time.</p>
 				</div>
@@ -79,7 +90,7 @@
 					<h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
 					<h5 class="center">Easy to work with</h5>
 
-					<p class="light">We have designed a simple interface with blazing fast algorithm</p>
+					<p class="light">Simple interface with blazing fast algorithm to maximize simplicity and comfort. Just lay back and enjoy!</p>
 				</div>
 			</div>
 		</div>
@@ -88,16 +99,14 @@
 	<br><br>
 </div>
 
-<footer class="page-footer orange">
+<footer class="page-footer green">
 	<div class="container">
 		<div class="row">
 			<div class="col l6 s12">
-				<h5 class="white-text">Company Bio</h5>
-				<p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
+				<h5 class="white-text">About</h5>
+				<p class="grey-text text-lighten-4">WaterMarker was coded with <strong class="heart-icon">&#x2764;</strong> and it is free to use. :)</p>
 			</div>
-			<div class="col l3 s12">
+			<!-- <div class="col l3 s12">
 				<h5 class="white-text">Settings</h5>
 				<ul>
 					<li><a class="white-text" href="#!">Link 1</a></li>
@@ -105,21 +114,21 @@
 					<li><a class="white-text" href="#!">Link 3</a></li>
 					<li><a class="white-text" href="#!">Link 4</a></li>
 				</ul>
-			</div>
+			</div> -->
 			<div class="col l3 s12">
 				<h5 class="white-text">Connect</h5>
 				<ul>
-					<li><a class="white-text" href="#!">Link 1</a></li>
-					<li><a class="white-text" href="#!">Link 2</a></li>
-					<li><a class="white-text" href="#!">Link 3</a></li>
-					<li><a class="white-text" href="#!">Link 4</a></li>
+					<li><a class="white-text" href="#!">Hire Me</a></li>
+					<li><a class="white-text" href="#!">Facebook</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 	<div class="footer-copyright">
 		<div class="container">
-			Made by <a class=" text-lighten-3" href="http://materializecss.com">Materialize</a>
+			<p>
+				Made by <a href="http://diegofortes.com">Diego Fortes</a>
+			</p>
 		</div>
 	</div>
 </footer>
