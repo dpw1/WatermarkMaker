@@ -82,7 +82,6 @@
 								imgSrc = img.getAttribute('src');
 								$whereToInsertImage.insertAdjacentHTML('afterbegin', `<div class="carousel-item carousel-item-${counter}"></div>`);
 								$whereToInsertImage.querySelector('.carousel-item-'+counter).appendChild(img);
-								console.log('1')
 							})
 							.then(function() {
 								download(imgSrc, "watermarker-image-"+counter+".png");
