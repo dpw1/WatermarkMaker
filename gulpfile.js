@@ -131,7 +131,7 @@ gulp.task('scripts', () => {
     }))
     .pipe(concat('bundle.js'))
     .on('error', util.log)
-    //.pipe(uglify())
+    .pipe(uglify())
     .on('error', util.log)
     .pipe(gulp.dest(paths.dist.javascript))
     .pipe(browserSync.reload({stream: true}));
@@ -140,7 +140,7 @@ gulp.task('scripts', () => {
   * Uglify JS libs and move to dist folder
   */
   gulp.src([paths.src.libs])
-    // .pipe(uglify())
+    .pipe(uglify())
     .on('error', util.log)
     .pipe(gulp.dest(paths.dist.libs))
     .pipe(browserSync.reload({stream: true}));
